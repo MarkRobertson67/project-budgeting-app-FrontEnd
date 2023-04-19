@@ -15,12 +15,13 @@ Overall, this app provides users with a clear and easy-to-use budgeting tool tha
 
 
 ### Mark Roberston
-<!-- [GitHub](https://github.com/mark-robertson){:target="_blank"} -->
-<!-- https://beautiful-selkie.netlify.app/ -->
+[GitHub](https://github.com/mark-robertson){:target="_blank"}
 
-[Trello Board link](https://trello.com/b/hooDP5Pu/budgeting-app#){:target="_blank"}
+
+<!-- [Trello Board link](https://trello.com/b/hooDP5Pu/budgeting-app#){:target="_blank"} -->
 <a href="https://trello.com/b/hooDP5Pu/budgeting-app#" target="_blank">Trello Board link</a>
 
+<br><br><br><br><br><br>
 
 # Getting Started with Create React App
 
