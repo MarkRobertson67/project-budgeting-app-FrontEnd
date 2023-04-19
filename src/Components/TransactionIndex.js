@@ -32,9 +32,9 @@ function TransactionIndex() {
   
     return (
       <Container className="my-5">
-        <h1 className="text-center">{transaction.id}</h1><br />
+        {/* <h1 className="text-center">{transaction.id}</h1><br /> */}
         <h4 className="text-center">Date: {formattedDate}</h4><br />
-        <h4 className="text-center">Amount: ${Math.abs(transaction.amount)}</h4><br />
+        <h4 className="text-center">Amount: ${transaction.amount}</h4><br />
         <h4 className="text-center">Transaction Type: {transaction.deposit ? "Deposit" : "Withdrawal"}</h4><br />
         <h4 className="text-center">From: {transaction.from}</h4><br />
         <h4 className="text-center">Category: {transaction.category}</h4><br />
