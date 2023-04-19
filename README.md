@@ -19,7 +19,7 @@ Overall, this app provides users with a clear and easy-to-use budgeting tool tha
 <!-- https://beautiful-selkie.netlify.app/ -->
 
 [Trello Board link](https://trello.com/b/hooDP5Pu/budgeting-app#){:target="_blank"}
-
+<a href="https://trello.com/b/hooDP5Pu/budgeting-app#" target="_blank">Trello Board link</a>
 
 
 # Getting Started with Create React App
