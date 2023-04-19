@@ -15,11 +15,10 @@ Overall, this app provides users with a clear and easy-to-use budgeting tool tha
 
 
 ### Mark Roberston
-[GitHub](https://github.com/mark-robertson){:target="_blank"}
 
+<a href="https://trello.com/b/hooDP5Pu/budgeting-app#" target="_blank">Trello Board link</a><br>
 
-<!-- [Trello Board link](https://trello.com/b/hooDP5Pu/budgeting-app#){:target="_blank"} -->
-<a href="https://trello.com/b/hooDP5Pu/budgeting-app#" target="_blank">Trello Board link</a>
+<a href="https://github.com/mark-robertson" target="_blank">GitHub link</a><br>
 
 <br><br><br><br><br><br>
 
