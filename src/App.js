@@ -1,23 +1,29 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Nav from "./Components/NavBar";
-import Show from "./Pages/Show";
-import Index from "./Pages/Index";
+import Home from "./Components/Home";
+import Navbar from "./Components/NavBar";
+import Transactions from "./Components/Transactions";
+import TransactionIndex from "./Components/TransactionIndex"
+import NewTransaction from "./Components/NewTransaction"
+import EditTransaction from "./Components/EditTransaction"
+
 
 
 function App() {
+
   return(
-  <>
+  <div className="App">
   <Router>
-      <Nav/>
+      <Navbar/>
     <Routes>
       <Route path ="/" element={<Home/>}/>
-      <Route path ="/logs" element={<Index/>}/>
-      <Route path="/logs/:index" element={<Show />} />
+      <Route path ="/transactions" element={<Transactions/>} />
+      <Route path="/transactions/:id" element={<TransactionIndex />} />
+      <Route path="/transactions/new" element={<NewTransaction/>} />
+      <Route path="/transactions/edit/:id" element={<EditTransaction/>} />
     </Routes>
   </Router>
-  </>
+  </div>
   )
 }
 

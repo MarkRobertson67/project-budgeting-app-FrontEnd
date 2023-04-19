@@ -1,3 +1,26 @@
+# Budgeting App
+
+The Full Stack Budgeting App is a React application that allows users to perform CRUD (create, read, update, delete) operations on a single resource. The application includes a navigation bar that features the app name and a button to create a new resource.
+
+The Index page displays all resources in the database table and provides a clear and thoughtful presentation of the data. Clicking on a single resource leads to a Show page that presents more detailed information about that specific resource.
+
+Users can create a new resource by clicking the button in the navigation bar, which leads to a page with a form to input the necessary data. The forms are properly labeled, and the type of inputs is appropriately set, such as using "number" for numeric input.
+
+When a new resource form is submitted, the resource is created in the database, and the user is directed to the new resource's Show page. The Show page includes a button to edit the current resource, leading to a form page with pre-filled data that can be edited. When an edited resource form is submitted, the resource is updated in the database, and the user is redirected to the updated resource's Show page.
+
+The Show page also includes a button to delete the current resource. The front-end application performs a calculation based on the resource's data, which is displayed to the user on the Index page. For example, the bank account total is visible, and the CSS changes based on the value, using greenish color for balances over 100, yellowish for balances between 0 and 100, and reddish for balances less than 0.
+
+Overall, this app provides users with a clear and easy-to-use budgeting tool that can be tailored to their specific needs.
+
+
+### Mark Roberston
+<!-- [GitHub](https://github.com/mark-robertson){:target="_blank"} -->
+<!-- https://beautiful-selkie.netlify.app/ -->
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
