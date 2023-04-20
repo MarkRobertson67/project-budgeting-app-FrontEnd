@@ -131,7 +131,7 @@
               <br />
               <button type="submit">Save</button>
               <button type="button" onClick={() => navigate('/transactions')}>
-                Cancel
+                Back
               </button>
             </form>
           </div>

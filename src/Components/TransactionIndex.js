@@ -77,6 +77,9 @@ function TransactionIndex() {
           <Link to={`/transactions/edit/${id}`}>
           <button>Edit</button>
           </Link>
+          <button type="button" onClick={() => navigate('/transactions')}>
+            Back
+          </button>
           <button onClick={handleDelete}>Delete</button>
         </Container>
       );

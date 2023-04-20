@@ -127,7 +127,7 @@ export default function NewTransaction() {
           <br />
           <button type="submit">Save</button>
           <button type="button" onClick={() => navigate('/transactions')}>
-            Cancel
+            Back
           </button>
           <button onClick={handleDelete}>Delete</button>
         </form>
