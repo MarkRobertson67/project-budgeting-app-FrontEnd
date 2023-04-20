@@ -20,18 +20,22 @@ export default function NewTransaction() {
   });
 
   function handleInputChange(event) {
-    const { name, value, type, checked } = event.target;
-    const newValue =
-      type === 'checkbox'
-        ? checked
-        : name === 'deposit'
-        ? value === 'true'
-        : value;
-    setNewTransaction((prevState) => ({
-      ...prevState,
-      [name]: newValue,
-    }));
-  }
+  const { name, value, type, checked } = event.target;
+  const newValue =
+  type === 'checkbox'
+    ? checked
+    : name === 'deposit'
+    ? value === 'true'
+    : name === 'amount'
+    ? parseFloat(value)
+    : value;
+
+  setNewTransaction((prevState) => ({
+    ...prevState,
+    [name]: newValue,
+  }));
+}
+
   
 
   const handleSubmit = (event) => {
@@ -123,9 +127,9 @@ return (
                   </select>
                 </td>
               </tr>
+
               <tr key={`${newTransaction.id}-buttons`}>
-              <td>
-                      
+              <td> 
                       </td>
                 <td>
                   <button type="submit">Save</button>

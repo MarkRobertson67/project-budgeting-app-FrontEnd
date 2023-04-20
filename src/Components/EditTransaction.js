@@ -20,21 +20,23 @@
         category: '',
         deposit: false,
       });
+      
       let {id} = useParams()
     
       function handleInputChange(event) {
-        const { name, value } = event.target;
+        const { name, value, type, checked } = event.target;
         const newValue =
-          name === 'depositToggle'
-            ? event.target.checked
-            : name === 'amount'
-            ? parseFloat(value)
+          type === 'checkbox'
+            ? checked
+            : name === 'deposit'
+            ? value === 'true'
             : value;
         setEditTransaction((prevState) => ({
           ...prevState,
           [name]: newValue,
         }));
       }
+      
     
       const handleSubmit = (event) => {
         event.preventDefault();
@@ -123,7 +125,23 @@
                       />
                     </td>
                   </tr>
-                  <tr>
+                  <tr key={`${editTransaction.id}-deposit`}>
+                <td>Deposit:</td>
+                <td>
+                  <select
+                    name="deposit"
+                    value={editTransaction.deposit}
+                    onChange={handleInputChange}
+                  >
+                    <option value={true}>True</option>
+                    <option value={false}>False</option>
+                  </select>
+                </td>
+              </tr>
+
+
+
+                  {/* <tr>
                     <td>Deposit:</td>
                     <td>
                       <input
@@ -133,7 +151,7 @@
                         onChange={handleInputChange}
                       />
                     </td>
-                  </tr>
+                  </tr> */}
                   <tr>
                     <td>
                       
@@ -144,7 +162,7 @@
                         type="button"
                         onClick={() => navigate('/transactions')}
                       >Back</button>
-                      {/* <button onClick={handleDelete}>Delete</button> */}
+                      
                     </td>
                   </tr>
                 </tbody>
