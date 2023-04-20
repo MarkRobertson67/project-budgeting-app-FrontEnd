@@ -12,8 +12,7 @@ export default function NavBar() {
       .then((res) => res.json())
       .then((response) => {
         const total = response.reduce((acc, transaction) => {
-          return acc + Number(transaction.amount);
-
+          return acc + transaction.amount;
         }, 0);
         setAccountTotal(total);
       })
@@ -48,6 +47,14 @@ export default function NavBar() {
     </nav>
   );
 }
+
+
+
+
+
+
+
+
 
 
 
