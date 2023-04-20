@@ -37,8 +37,7 @@ export default function NewTransaction() {
   };
 
   const addTransaction = (newTransaction) => {
-    const id = Math.floor(Math.random() * 1000000); // generate a random integer
-    const transactionWithId = { ...newTransaction, id }; // assign the random integer as the ID
+    const transactionWithId = { ...newTransaction }; 
     axios
       .post(`${API}/transactions`, transactionWithId)
       .then(() => navigate('/transactions'))

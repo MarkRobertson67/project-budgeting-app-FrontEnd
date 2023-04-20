@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from "axios";
+
 
 const API = process.env.REACT_APP_API_URL
 
@@ -42,6 +43,7 @@ function TransactionIndex() {
           .catch((e) => console.error(e));
       }
   
+ 
     return (
         <Container className="my-5" style={{width: "500px"}}>
           <table className="table">
@@ -72,6 +74,9 @@ function TransactionIndex() {
               </tr>
             </tbody>
           </table>
+          <Link to={`/transactions/edit/${id}`}>
+          <button>Edit</button>
+          </Link>
           <button onClick={handleDelete}>Delete</button>
         </Container>
       );
