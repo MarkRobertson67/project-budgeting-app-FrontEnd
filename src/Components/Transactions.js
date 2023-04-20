@@ -17,22 +17,21 @@ export default function Transactions() {
       .then((response) => {
         setTransactions(response)
         console.log(response)
-        const total = response.reduce((acc, transaction) => {
-            return acc + Number(transaction.amount);
+      })
+      .catch((e) => console.log(e))
+  }, [])
 
+  useEffect(() => {
+    fetch(`${API}/transactions`)
+      .then((res) => res.json())
+      .then((response) => {
+        const total = response.reduce((acc, transaction) => {
+          return acc + transaction.amount;
         }, 0);
         setAccountTotal(total);
       })
-      .catch((e) => console.log(e))
-  }, [accountTotal])
-
-
-//   useEffect(() => {
-//     const total = transactions.reduce((acc, transaction) => {
-//         return acc + transaction.amount;
-//       }, 0);
-//       setAccountTotal(total);
-//   }, [transactions]);
+      .catch((e) => console.log(e));
+  }, []);
 
   let accountTotalStyle = '';
   if (accountTotal > 100) {
@@ -57,10 +56,10 @@ export default function Transactions() {
           </tr>
         </thead>
         <tbody>
-{transactions.map((transaction, index) => {
+{transactions.map((transaction) => {
     const formattedDate = new Date(transaction.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
     return (
-        <tr key={index}>
+        <tr key={transaction.id}>
             <td>{formattedDate}</td>
             <td>
                 <Link to={{ pathname: `/transactions/${transactions.indexOf(transaction)}`, state: { transaction: transaction } }}>
