@@ -62,9 +62,9 @@
     
     
     return (
-        <Container>
-          <div className="EditTransaction">
-            <h1>NewTransaction</h1>
+        <Container className="d-flex justify-content-center align-items-center">
+          <div className="EditTransaction" style={{ marginTop: '50px' }}>
+            <h1>Edit Transaction</h1><br />
             <form onSubmit={handleSubmit}>
               <Table striped bordered hover>
                 <tbody>
