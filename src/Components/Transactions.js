@@ -57,7 +57,7 @@ export default function Transactions() {
         <tr key={transaction.id}>
             <td>{formattedDate}</td>
             <td>
-                <Link to={{ pathname: `/transactions/${transaction.id}`, state: { transaction: transaction } }}>
+                <Link to={{ pathname: `/transactions/${transactions.indexOf(transaction)}`, state: { transaction: transaction } }}>
                     {transaction.item_name}
                 </Link>
             </td>
