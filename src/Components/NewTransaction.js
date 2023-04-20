@@ -20,18 +20,19 @@ export default function NewTransaction() {
   });
 
   function handleInputChange(event) {
-    const { name, value } = event.target;
+    const { name, value, type, checked } = event.target;
     const newValue =
-      name === 'depositToggle'
-        ? event.target.checked
-        : name === 'amount'
-        ? parseFloat(value)
+      type === 'checkbox'
+        ? checked
+        : name === 'deposit'
+        ? value === 'true'
         : value;
     setNewTransaction((prevState) => ({
       ...prevState,
       [name]: newValue,
     }));
   }
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -47,23 +48,14 @@ export default function NewTransaction() {
   };
   
 
-  function handleDelete() {
-    axios
-      .delete(`${API}/transactions/${newTransaction.id}`)
-      .then(() => {
-        navigate('/transactions');
-      })
-      .catch((e) => console.error(e));
-  }
-
-  return (
-    <Container>
-      <div className="NewTransaction">
-        <h1>NewTransaction</h1>
+return (
+    <Container className="d-flex justify-content-center align-items-center">
+      <div className="NewTransaction" style={{ marginTop: '50px' }}>
+      <h1 className="text-center">NewTransaction</h1><br />
         <form onSubmit={handleSubmit}>
-          <Table striped bordered hover>
+        <Table striped bordered hover style={{ width: '500px' }}>
             <tbody>
-              <tr>
+              <tr key={`${newTransaction.id}-item_name`}>
                 <td>Item Name:</td>
                 <td>
                   <input
@@ -74,7 +66,7 @@ export default function NewTransaction() {
                   />
                 </td>
               </tr>
-              <tr>
+              <tr key={`${newTransaction.id}-amount`}>
                 <td>Amount:</td>
                 <td>
                   <input
@@ -85,7 +77,7 @@ export default function NewTransaction() {
                   />
                 </td>
               </tr>
-              <tr>
+              <tr key={`${newTransaction.id}-date`}>
                 <td>Date:</td>
                 <td>
                   <input
@@ -96,7 +88,7 @@ export default function NewTransaction() {
                   />
                 </td>
               </tr>
-              <tr>
+              <tr key={`${newTransaction.id}-from`}>
                 <td>From:</td>
                 <td>
                   <input
@@ -107,7 +99,7 @@ export default function NewTransaction() {
                   />
                 </td>
               </tr>
-              <tr>
+              <tr key={`${newTransaction.id}-category`}>
                 <td>Category:</td>
                 <td>
                   <input
@@ -118,28 +110,32 @@ export default function NewTransaction() {
                   />
                 </td>
               </tr>
-              <tr>
+              <tr key={`${newTransaction.id}-deposit`}>
                 <td>Deposit:</td>
                 <td>
-                  <input
-                    type="checkbox"
-                    name="depositToggle"
-                    checked={newTransaction.deposit}
+                  <select
+                    name="deposit"
+                    value={newTransaction.deposit}
                     onChange={handleInputChange}
-                  />
+                  >
+                    <option value={true}>True</option>
+                    <option value={false}>False</option>
+                  </select>
                 </td>
               </tr>
-              <tr>
+              <tr key={`${newTransaction.id}-buttons`}>
+              <td>
+                      
+                      </td>
                 <td>
-                  
-                </td>
-                <td>
-                <button type="submit">Save</button>
+                  <button type="submit">Save</button>
                   <button
                     type="button"
                     onClick={() => navigate('/transactions')}
-                  >Back</button>
-                  <button onClick={handleDelete}>Delete</button>
+                  >
+                    Back
+                  </button>
+                  
                 </td>
               </tr>
             </tbody>
@@ -148,5 +144,4 @@ export default function NewTransaction() {
       </div>
     </Container>
   );
-
 }

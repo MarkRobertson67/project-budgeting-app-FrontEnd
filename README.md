@@ -8,7 +8,7 @@ Users can create a new resource by clicking the button in the navigation bar, wh
 
 When a new resource form is submitted, the resource is created in the database, and the user is directed to the new resource's Show page. The Show page includes a button to edit the current resource, leading to a form page with pre-filled data that can be edited. When an edited resource form is submitted, the resource is updated in the database, and the user is redirected to the updated resource's Show page.
 
-The Show page also includes a button to delete the current resource. The front-end application performs a calculation based on the resource's data, which is displayed to the user on the Index page. For example, the bank account total is visible, and the CSS changes based on the value, using greenish color for balances over 100, yellowish for balances between 0 and 100, and reddish for balances less than 0.
+The Show page also includes a button to delete the current resource. The front-end application performs a calculation based on the resource's data, which is displayed to the user on the Index page. For example, the bank account total is visible, and the CSS changes based on the value, using greenish color for balances over 100, yellowish for balances between 0 and 100, and reddish for balances less than 0.  Other pages are styled using bootstrap for a nice looking UI.
 
 Overall, this app provides users with a clear and easy-to-use budgeting tool that can be tailored to their specific needs.
 
