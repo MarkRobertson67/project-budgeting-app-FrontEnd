@@ -4,11 +4,7 @@ import { Container } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
 
-
-
 const API = process.env.REACT_APP_API_URL
-
-
 
 function TransactionIndex() {
     const { id } = useParams();
@@ -39,7 +35,7 @@ function TransactionIndex() {
 
     function handleDelete() {
         axios
-          .delete(`${API}/transactions/${transaction.id}`)
+          .delete(`${API}/transactions/${id}`)
           .then(() => {
             navigate('/transactions');
           })
