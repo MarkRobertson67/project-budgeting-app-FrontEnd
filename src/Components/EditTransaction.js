@@ -2,6 +2,9 @@
     import React, { useState, useEffect } from 'react';
     import { useNavigate, useParams } from 'react-router-dom';
     import axios from 'axios';
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    import { Container, Table } from 'react-bootstrap';
+
     
     const API = process.env.REACT_APP_API_URL;
     
@@ -58,84 +61,98 @@
     }, [id])
     
     
-      return (
-        <>
+    return (
+        <Container>
           <div className="EditTransaction">
-            <h1>EditTransaction</h1>
+            <h1>NewTransaction</h1>
             <form onSubmit={handleSubmit}>
-              <label>
-                Item Name:
-                <input
-                  type="text"
-                  name="item_name"
-                  value={editTransaction.item_name}
-                  onChange={handleInputChange}
-                />
-              </label>
-              <br />
-              <br />
-              <label>
-                Amount:
-                <input
-                  type="number"
-                  name="amount"
-                  value={editTransaction.amount}
-                  onChange={handleInputChange}
-                />
-              </label>
-              <br />
-              <br />
-              <label>
-                Date:
-                <input
-                  type="date"
-                  name="date"
-                  value={editTransaction.date}
-                  onChange={handleInputChange}
-                />
-              </label>
-              <br />
-              <br />
-              <label>
-                From:
-                <input
-                  type="text"
-                  name="from"
-                  value={editTransaction.from}
-                  onChange={handleInputChange}
-                />
-              </label>
-              <br />
-              <br />
-              <label>
-                Category:
-                <input
-                  type="text"
-                  name="category"
-                  value={editTransaction.category}
-                  onChange={handleInputChange}
-                />
-              </label>
-              <br />
-              <br />
-              <label>
-                deposit:
-                <input
-                  type="checkbox"
-                  name="depositToggle"
-                  checked={editTransaction.deposit}
-                  onChange={handleInputChange}
-                />
-              </label>
-              <br />
-              <br />
-              <button type="submit">Save</button>
-              <button type="button" onClick={() => navigate('/transactions')}>
-                Back
-              </button>
+              <Table striped bordered hover>
+                <tbody>
+                  <tr>
+                    <td>Item Name:</td>
+                    <td>
+                      <input
+                        type="text"
+                        name="item_name"
+                        value={editTransaction.item_name}
+                        onChange={handleInputChange}
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Amount:</td>
+                    <td>
+                      <input
+                        type="number"
+                        name="amount"
+                        value={editTransaction.amount}
+                        onChange={handleInputChange}
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Date:</td>
+                    <td>
+                      <input
+                        type="date"
+                        name="date"
+                        value={editTransaction.date}
+                        onChange={handleInputChange}
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>From:</td>
+                    <td>
+                      <input
+                        type="text"
+                        name="from"
+                        value={editTransaction.from}
+                        onChange={handleInputChange}
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Category:</td>
+                    <td>
+                      <input
+                        type="text"
+                        name="category"
+                        value={editTransaction.category}
+                        onChange={handleInputChange}
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Deposit:</td>
+                    <td>
+                      <input
+                        type="checkbox"
+                        name="depositToggle"
+                        checked={editTransaction.deposit}
+                        onChange={handleInputChange}
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      
+                    </td>
+                    <td>
+                    <button type="submit">Save</button>
+                      <button
+                        type="button"
+                        onClick={() => navigate('/transactions')}
+                      >Back</button>
+                      {/* <button onClick={handleDelete}>Delete</button> */}
+                    </td>
+                  </tr>
+                </tbody>
+              </Table>
             </form>
           </div>
-        </>
+        </Container>
       );
+    
     }
     
