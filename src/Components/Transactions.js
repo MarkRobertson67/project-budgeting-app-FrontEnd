@@ -26,7 +26,11 @@ export default function Transactions() {
       .then((res) => res.json())
       .then((response) => {
         const total = response.reduce((acc, transaction) => {
-          return acc + transaction.amount;
+            if (transaction.deposit) {
+          return acc + Number(transaction.amount);
+            } else {
+                return acc - Number(transaction.amount);
+            }
         }, 0);
         setAccountTotal(total);
       })

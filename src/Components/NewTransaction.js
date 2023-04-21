@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { useNavigate, useParams} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { v4 as uuid} from "uuid";
 
 const API = process.env.REACT_APP_API_URL;
 
 export default function NewTransaction() {
   const navigate = useNavigate();
-  
+
+ 
   const [newTransaction, setNewTransaction] = useState({
-    id: null,
+    id: "",
     item_name: '',
     amount: 0,
     date: '',
@@ -17,26 +19,19 @@ export default function NewTransaction() {
     category: '',
     deposit: false,
   });
+  const id = uuid()
   
-  
-
   function handleInputChange(event) {
-    const { name, value } = event.target;
-    const newValue =
-      name === 'depositToggle'
-        ? event.target.checked
-        : name === 'amount'
-        ? parseFloat(value)
-        : value;
-    setNewTransaction((prevState) => ({
-      ...prevState,
-      [name === 'depositToggle' ? 'deposit' : name]: newValue,
-    }));
-  }
-  
+    setNewTransaction({ ...newTransaction, [event.target.id]: event.target.value });
+      };
 
+    const handleCheckboxChange = () => {
+        setNewTransaction({ ...newTransaction, deposit: !newTransaction.deposit });
+      };
+  
   const handleSubmit = (event) => {
     event.preventDefault();
+    newTransaction.id = id
     addTransaction(newTransaction);
   };
 
@@ -59,7 +54,7 @@ export default function NewTransaction() {
         className="EditTransaction"
         style={{ maxWidth: '500px', margin: '0 auto', paddingTop: '50px' }}
       >
-        <h1 style={{ textAlign: 'center' }}>Edit Transaction</h1>
+        <h1 style={{ textAlign: 'center' }}>New Transaction</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="item_name">Item Name:</label>
@@ -124,7 +119,7 @@ export default function NewTransaction() {
               id="depositToggle"
               className="form-check-input"
               checked={newTransaction.deposit}
-              onChange={handleInputChange}
+              onChange={handleCheckboxChange}
             /><br /><br />
           </div>
           <button type="submit" className="btn btn-primary" style={{ marginRight: '10px' }}>Save</button>

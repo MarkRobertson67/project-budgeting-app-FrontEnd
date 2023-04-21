@@ -4,8 +4,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 const API = process.env.REACT_APP_API_URL;
 
 export default function EditTransaction() {
@@ -22,19 +20,14 @@ export default function EditTransaction() {
   });
   let {id} = useParams()
 
+
   function handleInputChange(event) {
-    const { name, value } = event.target;
-    const newValue =
-      name === 'depositToggle'
-        ? event.target.checked
-        : name === 'amount'
-        ? parseFloat(value)
-        : value;
-    setEditTransaction((prevState) => ({
-      ...prevState,
-      [name === 'depositToggle' ? 'deposit' : name]: newValue,
-    }));
-  }
+    setEditTransaction({ ...editTransaction, [event.target.id]: event.target.value });
+      };
+
+    const handleCheckboxChange = () => {
+        setEditTransaction({ ...editTransaction, deposit: !editTransaction.deposit });
+      };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -132,7 +125,7 @@ return (
               id="depositToggle"
               className="form-check-input"
               checked={editTransaction.deposit}
-              onChange={handleInputChange}
+              onChange={handleCheckboxChange}
             /><br /><br />
           </div>
           <button type="submit" className="btn btn-primary" style={{ marginRight: '10px' }}>Save</button>
