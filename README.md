@@ -1,6 +1,12 @@
 # Budgeting App
 
-<a href="https://scribehow.com/shared/How_to_Add_and_Edit_Transactions_in_Budgeting_App__WVJetyvGT7OmUZLAXHussA" target="_blank">Budgeting App Instructions link</a><br>
+
+<br><a href="https://scribehow.com/shared/How_to_Add_and_Edit_Transactions_in_Budgeting_App__WVJetyvGT7OmUZLAXHussA" target="_blank">Budgeting App Instructions link</a><br>
+
+
+<img src="./public/transactions.png" alt="Screenshot b" width="68%" title="Transactions Page">
+<img src="./public/EditForm.png" alt="Screenshot b" width="68%" title="Edit Transaction Page">
+<img src="./public/NewForm.png" alt="Screenshot b" width="68%" title="New Transaction Page">
 
 
 The Full Stack Budgeting App is a React application that allows users to perform CRUD (create, read, update, delete) operations on a single resource. The application includes a navigation bar that features the app name and a button to create a new resource.
