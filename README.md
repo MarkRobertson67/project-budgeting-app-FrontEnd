@@ -3,7 +3,7 @@
 
 <br><a href="https://scribehow.com/shared/How_to_Add_and_Edit_Transactions_in_Budgeting_App__WVJetyvGT7OmUZLAXHussA" target="_blank">Budgeting App Instructions link</a><br>
 
-
+<br /><br />
 <img src="./public/transactions.png" alt="Screenshot b" width="68%" title="Transactions Page">
 <img src="./public/EditForm.png" alt="Screenshot b" width="68%" title="Edit Transaction Page">
 <img src="./public/NewForm.png" alt="Screenshot b" width="68%" title="New Transaction Page">
